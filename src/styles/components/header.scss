@@ -1,0 +1,11 @@
+@import '../core/reset.scss';
+@import '../core/variables.scss';
+
+.header{
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
