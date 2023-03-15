@@ -1,10 +1,10 @@
 //Styles
 import '../styles/components/moviesList.scss';
-import '../styles/components/header.scss';
 
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Movie from './Movie';
+import Header from './Header';
 
 
 function App() {
@@ -40,9 +40,7 @@ function App() {
 
   return (
     <>
-      <header className='header'>
-        <h1 className="header__title">Movies Web</h1>
-      </header>
+      <Header/>
       <main className="main">
         <section className='movies'>
           <ul className="movies__list">
