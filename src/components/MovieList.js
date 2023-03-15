@@ -10,6 +10,7 @@ const MovieList = ({ data, urlImg }) => {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedMovie, setSelectedMovie] = useState({});
+    const body = document.querySelector('.body');
 
     const handleOpenModal = (movie) => {
         const additionalData = data.find((m) => m.id === movie.id);
@@ -19,10 +20,12 @@ const MovieList = ({ data, urlImg }) => {
     
     const handleCloseModal = () => {
         setIsModalOpen(false);
+        body.classList.remove('modal-overflow');
         setSelectedMovie({});
     };
 
     const renderModal = () => {
+        body.classList.add('modal-overflow');
         return <Modal handleCloseModal={handleCloseModal} selectedMovie={selectedMovie} urlImg={urlImg} />
     };
 
