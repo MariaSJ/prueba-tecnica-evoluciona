@@ -12,7 +12,6 @@ const DataAPI = () => {
 
     const urlAPI = 'https://api.themoviedb.org/3';
     const keyAPI = '729b6df65e3a07383ad2fe67ad350467';
-    // const imgPath = 'https://image.tmdb.org/t/p/original';
     const urlImg = 'https://image.tmdb.org/t/p/original';
   
     useEffect(() => {
@@ -25,7 +24,6 @@ const DataAPI = () => {
             });
             
             setData(results);
-            // setMovie(results[0]);
         }
 
         getDataMovies();

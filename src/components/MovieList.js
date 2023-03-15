@@ -21,7 +21,7 @@ const MovieList = ({ data, urlImg }) => {
     };
 
     const renderModal = () => {
-        return <Modal handleCloseModal={handleCloseModal} selectedMovie={selectedMovie} />
+        return <Modal handleCloseModal={handleCloseModal} selectedMovie={selectedMovie} urlImg={urlImg} />
     };
 
     return (
