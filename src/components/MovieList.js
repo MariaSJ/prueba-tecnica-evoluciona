@@ -4,16 +4,24 @@ import Modal from './Modal';
 
 const MovieList = ({ data, urlImg }) => {
     
-    // Search movie id
+    // Search movie id and show modal
 
-    // const foundedMovie = data.find((movie) => movie.id === parseInt(movieId));
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedMovie, setSelectedMovie] = useState({});
 
-    // Show modal
+    const handleOpenModal = (movie) => {
+        const additionalData = data.find((m) => m.id === movie.id);
+        setSelectedMovie(additionalData);
+        setIsModalOpen(true);
+    };
+    
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+        setSelectedMovie({});
+    };
 
-    const [showModal, setShowModal] = useState(false);
-
-    const handleModal = () => {
-        setShowModal(!showModal);
+    const renderModal = () => {
+        return <Modal handleCloseModal={handleCloseModal} selectedMovie={selectedMovie} />
     };
 
     return (
@@ -21,11 +29,11 @@ const MovieList = ({ data, urlImg }) => {
         <section className='movies'>
             <ul className="movies__list">
                 {data.map((movie) =>
-                    <Movie key={movie.id} image={`${urlImg + movie.poster_path}`} title={movie.title} handleModal={handleModal} />
+                    <Movie key={movie.id} image={`${urlImg + movie.poster_path}`} title={movie.title} movie={movie} onMovieClick={handleOpenModal} />
                 )}
             </ul>
         </section>
-            {showModal && <Modal key={data.id} data={data} onClose={handleModal} />}
+        {isModalOpen !== false ? renderModal() : ''}
         </>
     );
 }
