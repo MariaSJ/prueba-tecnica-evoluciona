@@ -1,7 +1,7 @@
 //Styles
-import '../styles/components/moviesList.scss';
+import '../styles/components/movieList.scss';
 
-import { useState } from 'react';
+//import { useState } from 'react';
 import Header from './Header';
 import DataProvider from '../application/Provider';
 import DataAPI from './DataAPI';

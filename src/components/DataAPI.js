@@ -1,9 +1,12 @@
 import axios from 'axios';
 import { useEffect, useContext } from 'react';
 import { DataContext } from '../application/Provider';
-import Movie from './Movie';
+
+import MovieList from './MovieList';
 
 const DataAPI = () => {
+
+    // Data API
 
     const { data, setData } = useContext(DataContext);
 
@@ -19,21 +22,18 @@ const DataAPI = () => {
             params: {
                 api_key: keyAPI,
             },
-        });
-        setData(results);
-        // setMovie(results[0]);
-      }
+            });
+            
+            setData(results);
+            // setMovie(results[0]);
+        }
+
         getDataMovies();
+
     }, []);
   
     return (
-        <section className='movies'>
-            <ul className="movies__list">
-                {data.map((movie) =>
-                    <Movie key={movie.id} image={`${urlImg + movie.poster_path}`} title={movie.title} />
-                )}
-            </ul>
-      </section>
+        <MovieList data={data} urlImg={urlImg} /> 
     );
 };
   
