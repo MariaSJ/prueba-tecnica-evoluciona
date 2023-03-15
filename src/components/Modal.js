@@ -1,14 +1,25 @@
+import '../styles/components/modal.scss';
+
 import RatingForm from "./Form";
 
 const Modal = ({ handleCloseModal, selectedMovie, urlImg }) => {
 
     return (
         <div className="modal">
-            <button className="modal__close" onClick={handleCloseModal}>X</button>
-            <img className="modal__img" src={`${urlImg + selectedMovie.poster_path}`} alt={selectedMovie.title}></img>
-            <h4 className="modal__title">{selectedMovie.title}</h4>
-            <p className="modal__description">{selectedMovie.overview}</p>
-            <RatingForm/>
+            <div className="modal__card" style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(${urlImg + selectedMovie.poster_path})`, backgroundSize: "cover",
+            backgroundPosition: "center", color: "#fff"}}>
+                <button className="modal__close" onClick={handleCloseModal}>X</button>
+                <div className="modal__wraper">
+                    {/* <img className="modal__img" src={`${urlImg + selectedMovie.poster_path}`} alt={selectedMovie.title}></img> */}
+                    <div className="modal__info">
+                        <h4 className="modal__title">{selectedMovie.title}</h4>
+                        <p className="modal__date">{selectedMovie.release_date}</p>
+                        <p className="modal__description">{selectedMovie.overview}</p>
+                        <p className="modal__vote">Vote average: {selectedMovie.vote_average}</p>
+                        <RatingForm />
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }

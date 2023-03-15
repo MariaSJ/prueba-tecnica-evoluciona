@@ -2,18 +2,57 @@
 @import '../core/variables.scss';
 
 .movie{
-    width: 300px;
-    height: 450px;
-    border: 1px solid black;
+    width: 150px;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
     align-items: center;
     gap: 10px;
+    background: rgb(40,40,55);
+    background: linear-gradient(344deg, rgb(50, 50, 68) 0%, rgba(16,16,18,1) 50%);
+    box-shadow: 4px 6px 14px #00000036;
+    border-radius: 3px;
+    color: #F9F9F9;
+    padding: 16px;
+    transition: all .3s;
+
+    &:hover{
+        margin-top: -30px;
+    }
 
     &__img{
-        width: 250px;
+        width: 110px;
         cursor: pointer;
+    }
+
+    &__title{
+        font-size: 15px;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width:768px){
+    .movie{
+        width: 200px;
+
+        &__img{
+            width: 150px;
+        }
+    }
+}
+
+@media screen and (min-width:1024px){
+    .movie{
+        width: 300px;
+
+        &__img{
+            width: 250px;
+        }
+        
+        &__title{
+            font-size: 20px;
+        }
     }
 }

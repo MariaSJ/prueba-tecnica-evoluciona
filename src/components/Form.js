@@ -23,6 +23,7 @@ class RatingForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
+        <h5>Did you enjoy it?</h5>
         <Rating
           count={5}
           size={24}

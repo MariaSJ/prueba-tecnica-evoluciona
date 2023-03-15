@@ -1,3 +1,5 @@
+import '../styles/components/movieList.scss';
+
 import { useState } from 'react';
 import Movie from './Movie';
 import Modal from './Modal';

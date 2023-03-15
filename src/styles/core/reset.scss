@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 *{
     margin: 0;
     padding: 0;
@@ -11,4 +13,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+body{
+    font-family: $main-font;
+    background: linear-gradient(to bottom, #1c1d1d, #138068, #6d1380);
 }
