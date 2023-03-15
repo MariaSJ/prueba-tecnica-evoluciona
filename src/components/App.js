@@ -1,54 +1,26 @@
 //Styles
 import '../styles/components/moviesList.scss';
 
-import axios from 'axios';
-import { useEffect, useState } from 'react';
-import Movie from './Movie';
+import { useState } from 'react';
 import Header from './Header';
+import DataProvider from '../application/Provider';
+import DataAPI from './DataAPI';
 
 
 function App() {
 
-  const urlAPI = 'https://api.themoviedb.org/3';
-  const keyAPI = '729b6df65e3a07383ad2fe67ad350467';
-  // const imgPath = 'https://image.tmdb.org/t/p/original';
-  const urlImg = 'https://image.tmdb.org/t/p/original';
-
   // STATES
 
-  const [movies, setMovies] = useState([]);
-  const [movie, setMovie] = useState({ title: "Loading Movies" });
-
-  // FETCH
-
-  const getDataMovies = async() => {
-    const { data: { results },
-    } = await axios.get(`${urlAPI}/movie/now_playing`, {
-      params: {
-        api_key: keyAPI,
-      },
-    });
-
-    setMovies(results);
-    setMovie(results[0]);
-  }
-  
-  useEffect(() => {
-    getDataMovies();
-  }, []);
-
+  // const [movies, setMovies] = useState([]);
+  // const [movie, setMovie] = useState({ title: "Loading Movies" });
 
   return (
     <>
       <Header/>
       <main className="main">
-        <section className='movies'>
-          <ul className="movies__list">
-            {movies.map((movie) =>
-              <Movie key={movie.id} image={`${urlImg + movie.poster_path}`} title={movie.title} />
-            )}
-          </ul>
-        </section>
+        <DataProvider>
+          <DataAPI />
+        </DataProvider>
       </main>
     </>
   
