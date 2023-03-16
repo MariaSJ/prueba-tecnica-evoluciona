@@ -18,6 +18,7 @@ class RatingForm extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    localStorage.setItem('rating', this.state.rating);
     alert(`Rating submitted: ${this.state.rating}`);
   };
 
