@@ -12,6 +12,7 @@ const DataAPI = () => {
 
     const urlAPI = 'https://api.themoviedb.org/3';
     const keyAPI = '729b6df65e3a07383ad2fe67ad350467';
+    const spanish = 'es-ES';
     const urlImg = 'https://image.tmdb.org/t/p/original';
   
     useEffect(() => {
@@ -20,6 +21,7 @@ const DataAPI = () => {
             } = await axios.get(`${urlAPI}/movie/now_playing`, {
             params: {
                 api_key: keyAPI,
+                language: spanish
             },
             });
             

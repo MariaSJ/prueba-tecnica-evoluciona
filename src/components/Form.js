@@ -24,15 +24,15 @@ class RatingForm extends React.Component {
   render() {
     return (
       <form className='form' onSubmit={this.handleSubmit}>
-        <h5 className='form__title'>Did you enjoy it?</h5>
+        <h5 className='form__title'>¿Te ha gustado?</h5>
         <Rating
           count={5}
           size={32}
-          activeColor="#6d1380"
+          activeColor="#f4f80e"
           value={this.state.rating}
           onChange={this.handleRating}
         />
-        <button className='form__btn' type="submit">Send</button>
+        <button className='form__btn' type="submit">Enviar</button>
       </form>
     );
   }
