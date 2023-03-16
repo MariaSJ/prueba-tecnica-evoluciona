@@ -1,3 +1,4 @@
+import '../styles/components/form.scss';
 import React from 'react';
 import Rating from 'react-rating-stars-component';
 
@@ -22,17 +23,16 @@ class RatingForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <h5>Did you enjoy it?</h5>
+      <form className='form' onSubmit={this.handleSubmit}>
+        <h5 className='form__title'>Did you enjoy it?</h5>
         <Rating
           count={5}
-          size={24}
-          activeColor="#ffd700"
+          size={32}
+          activeColor="#6d1380"
           value={this.state.rating}
           onChange={this.handleRating}
         />
-        <br />
-        <button type="submit">Submit</button>
+        <button className='form__btn' type="submit">Send</button>
       </form>
     );
   }

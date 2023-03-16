@@ -3,6 +3,7 @@ import '../styles/components/movieList.scss';
 import { useState } from 'react';
 import Movie from './Movie';
 import Modal from './Modal';
+import ScrollUp from './ScrollUp';
 
 const MovieList = ({ data, urlImg }) => {
     
@@ -37,6 +38,7 @@ const MovieList = ({ data, urlImg }) => {
                     <Movie key={movie.id} image={`${urlImg + movie.poster_path}`} title={movie.title} movie={movie} onMovieClick={handleOpenModal} />
                 )}
             </ul>
+            <ScrollUp/>    
         </section>
         {isModalOpen !== false ? renderModal() : ''}
         </>

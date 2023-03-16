@@ -20,7 +20,7 @@
     border-radius: 10px;
 
     &__card{
-        background-color: #004743;
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -29,14 +29,28 @@
         min-height: 400px;
         width: 80%;
         height: 480px;
+        background-position: center;
+        background-size: cover;
+        color: #fff;
     }
 
     &__close{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: transparent;
+        color: white;
+        border: 0;
+        font-size: 20px;
+        align-self: flex-end;
+        cursor: pointer;
 
+        &:hover{
+            color: $violet;
+        }
     }
 
     &__wraper{
-        // width: 700px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -44,11 +58,6 @@
         align-items: center;
         gap: 10px;
     }
-
-    // &__img{
-    //     width: 110px;
-    //     border-radius: 90px;
-    // }
 
     &__info{
         padding: 15px;
@@ -69,4 +78,66 @@
         text-align: center;
     }
 
+}
+
+// MEDIAQUERIES
+
+@media screen and (min-width:768px){
+    .modal{
+        &__card{
+            width: 60%;
+            height: 650px;
+            background-color: $green-emerald;
+        }
+
+        &__close{
+            font-size: 30px;
+        }
+
+        &__info{
+            padding: 30px;
+        }
+
+        &__title{
+            font-size: 30px;
+        }
+
+        &__date, &__description, &__vote{
+            font-size: 18px;
+        }
+    }
+}
+
+@media screen and (min-width:1024px){
+    .modal{
+        &__card{
+            width: 35%;
+            height: 550px;
+        }
+
+        &__title{
+            font-size: 20px;
+        }
+
+        &__date, &__description, &__vote{
+            font-size: 15px;
+        }
+    }
+}
+
+@media screen and (min-width:1280px){
+    .modal{
+        &__card{
+            width: 450px;
+            height: 650px;
+        }
+
+        &__title{
+            font-size: 30px;
+        }
+
+        &__date, &__description, &__vote{
+            font-size: 18px;
+        }
+    }
 }
