@@ -27,7 +27,7 @@ const Modal = ({ handleCloseModal, selectedMovie, urlImg }) => {
                     <p className="modal__date">{selectedMovie.release_date}</p>
                     <p className="modal__description">{selectedMovie.overview}</p>
                     <p className="modal__vote">Valoración media: {selectedMovie.vote_average}</p>
-                    <RatingForm />
+                    <RatingForm selectedMovie={selectedMovie.id} />
                 </div>
             </div>
         </div>

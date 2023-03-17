@@ -1,42 +1,37 @@
 import '../styles/components/form.scss';
-import React from 'react';
+import React, { useState } from 'react';
 import Rating from 'react-rating-stars-component';
 
-class RatingForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      rating: 0,
-    };
-  }
+const RatingForm = ({ selectedMovie }) => {
+  
+  const [rating, setRating] = useState(0);
 
-  handleRating = (value) => {
-    this.setState({
-      rating: value,
-    });
+  const handleRating = (value) => {
+    setRating(value);
   };
 
-  handleSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    localStorage.setItem('rating', this.state.rating);
-    alert(`Rating submitted: ${this.state.rating}`);
+    localStorage.setItem('data', {
+      movieID: selectedMovie,
+      rating: rating,
+    })
+    alert(`Rating submitted: ${rating}`);
   };
 
-  render() {
     return (
-      <form className='form' onSubmit={this.handleSubmit}>
+      <form className='form' onSubmit={handleSubmit}>
         <h5 className='form__title'>¿Te ha gustado?</h5>
         <Rating
           count={5}
           size={32}
           activeColor="#f4f80e"
-          value={this.state.rating}
-          onChange={this.handleRating}
+          value={rating}
+          onChange={handleRating}
         />
         <button className='form__btn' type="submit">Enviar</button>
       </form>
     );
-  }
 }
 
 export default RatingForm;
