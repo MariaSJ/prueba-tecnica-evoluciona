@@ -1,8 +1,22 @@
 import '../styles/components/modal.scss';
-
+import { gsap } from "gsap";
+import { useLayoutEffect } from 'react'
 import RatingForm from "./Form";
 
 const Modal = ({ handleCloseModal, selectedMovie, urlImg }) => {
+
+    // Animations GSAP
+    useLayoutEffect(() => {
+        
+        const boxModal = document.querySelectorAll('.modal__card');
+        gsap.from(boxModal, {
+            duration: 0.5,
+            scale: 0.1,
+            y: 40,
+            ease: "power1.inOut"
+        })
+        
+    }, []);
 
     return (
         <div className="modal">
