@@ -1,5 +1,4 @@
 import '../styles/components/movieList.scss';
-import { gsap } from "gsap";
 import { useState } from 'react';
 import Movie from './Movie';
 import Modal from './Modal';
@@ -35,7 +34,7 @@ const MovieList = ({ data, urlImg }) => {
         <section className='movies'>
             <ul className="movies__list">
                 {data.map((movie) =>
-                    <Movie key={movie.id} image={`${urlImg + movie.poster_path}`} title={movie.title} movie={movie} onMovieClick={handleOpenModal} />
+                    <Movie key={movie.id} image={`${urlImg + movie.poster_path}`} title={movie.title} movie={movie} handleOpenModal={handleOpenModal} />
                 )}
             </ul>
             <ScrollUp/>    
