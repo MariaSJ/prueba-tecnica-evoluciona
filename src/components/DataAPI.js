@@ -1,12 +1,9 @@
 import axios from 'axios';
 import { useEffect, useContext } from 'react';
 import { DataContext } from '../application/Provider';
-
 import MovieList from './MovieList';
 
 const DataAPI = () => {
-
-    // Data API
 
     const { data, setData } = useContext(DataContext);
 
@@ -21,7 +18,7 @@ const DataAPI = () => {
             } = await axios.get(`${urlAPI}/movie/now_playing`, {
             params: {
                 api_key: keyAPI,
-                language: spanish
+                language: spanish,
             },
             });
             

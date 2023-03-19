@@ -50,15 +50,6 @@
         }
     }
 
-    &__wraper{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-content: center;
-        align-items: center;
-        gap: 10px;
-    }
-
     &__info{
         padding: 15px;
         display: flex;
@@ -74,7 +65,7 @@
     }
 
     &__description{
-        font-size: 12px;
+        font-size: 14px;
         text-align: center;
     }
 }

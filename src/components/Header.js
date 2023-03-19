@@ -1,7 +1,5 @@
 import { gsap } from "gsap";
-import { useLayoutEffect, useRef } from 'react'
-import '../styles/core/reset.scss';
-import '../styles/core/variables.scss';
+import { useLayoutEffect } from 'react';
 import '../styles/components/header.scss';
 import Logo from '../images/logo.png';
 
@@ -18,7 +16,7 @@ const Header = () => {
 
     return (
         <header className='header'>
-            <img className="header__logo" src={Logo} alt='Logo web' title='Logo'></img>
+            <img className="header__logo" src={Logo} alt='Logo web'></img>
             <p className="header__subtitle">¡Entérate de los últimos estrenos y adelántanos tu opinión!</p>
         </header>
     );

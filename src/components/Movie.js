@@ -1,7 +1,5 @@
 import { gsap } from "gsap";
-import { useLayoutEffect } from 'react'
-import '../styles/core/reset.scss';
-import '../styles/core/variables.scss';
+import { useLayoutEffect } from 'react';
 import '../styles/components/movie.scss';
 
 const Movie = ({ image, title, movie, handleOpenModal }) => {
@@ -11,7 +9,7 @@ const Movie = ({ image, title, movie, handleOpenModal }) => {
         
         const boxMovie = document.querySelectorAll('.movie');
         gsap.to(boxMovie, {
-            y: 30,
+            scale: 1,
             duration: 0.2,
             stagger: {
                 each: 0.2,

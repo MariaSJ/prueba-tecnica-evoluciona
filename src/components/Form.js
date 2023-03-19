@@ -4,12 +4,15 @@ import Rating from 'react-rating-stars-component';
 import ls from '../services/localStorage';
 
 const RatingForm = ({ selectedMovie }) => {
+
   const [data, setData] = useState(ls.get('data', []) || []);
   const [rating, setRating] = useState(0);
-
+  
   useEffect(() => {
     ls.set('data', data);
   }, [data]);
+
+  const currentRating = data.find((obj) => obj.movieKey === selectedMovie)?.rating || 0;
 
   const handleRating = (value) => {
     setRating(value);
@@ -23,8 +26,6 @@ const RatingForm = ({ selectedMovie }) => {
     ls.set('data', updatedData);
     alert(`Rating submitted: ${rating}`);
   };
-
-  const currentRating = data.find((obj) => obj.movieKey === selectedMovie)?.rating || 0;
 
   return (
     <form className='form'>

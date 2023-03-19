@@ -1,5 +1,3 @@
-import '../styles/core/reset.scss';
-import '../styles/core/variables.scss';
 import '../styles/components/scrollUp.scss';
 
 import { useState, useEffect } from 'react';
