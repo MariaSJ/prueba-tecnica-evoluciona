@@ -6,17 +6,16 @@ const Movie = ({ image, title, movie, handleOpenModal }) => {
     
     // Animations GSAP
     useLayoutEffect(() => {
-        
         const boxMovie = document.querySelectorAll('.movie');
         gsap.to(boxMovie, {
-            scale: 1,
+            y: 25,
             duration: 0.2,
             stagger: {
                 each: 0.2,
-                from: 1
+                from: "center"
             }
         })
-    }, []);
+    })
 
     return (
         <li className="movie">

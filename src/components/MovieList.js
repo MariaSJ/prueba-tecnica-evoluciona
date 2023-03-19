@@ -5,9 +5,9 @@ import Modal from './Modal';
 import ScrollUp from './ScrollUp';
 
 const MovieList = ({ data, urlImg }) => {
-    
-    // Search movie id and show modal
 
+     // Search movie id and show modal
+    
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedMovie, setSelectedMovie] = useState({});
     const body = document.querySelector('.body');
