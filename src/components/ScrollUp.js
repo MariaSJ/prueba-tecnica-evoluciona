@@ -1,5 +1,4 @@
 import '../styles/components/scrollUp.scss';
-
 import { useState, useEffect } from 'react';
 
 const ScrollUp = () => {

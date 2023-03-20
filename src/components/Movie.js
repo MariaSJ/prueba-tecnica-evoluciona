@@ -1,6 +1,6 @@
+import '../styles/components/movie.scss';
 import { gsap } from "gsap";
 import { useLayoutEffect } from 'react';
-import '../styles/components/movie.scss';
 
 const Movie = ({ image, title, movie, handleOpenModal }) => {
     

@@ -7,7 +7,6 @@ const Modal = ({ handleCloseModal, selectedMovie, urlImg }) => {
 
     // Animations GSAP
     useLayoutEffect(() => {
-        
         const boxModal = document.querySelectorAll('.modal__card');
         gsap.from(boxModal, {
             duration: 0.5,
@@ -15,7 +14,6 @@ const Modal = ({ handleCloseModal, selectedMovie, urlImg }) => {
             y: 40,
             ease: "power1.inOut"
         })
-        
     }, []);
 
     return (

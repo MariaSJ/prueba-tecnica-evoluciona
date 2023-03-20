@@ -1,6 +1,6 @@
+import '../styles/components/header.scss';
 import { gsap } from "gsap";
 import { useLayoutEffect } from 'react';
-import '../styles/components/header.scss';
 import Logo from '../images/logo.png';
 
 const Header = () => {

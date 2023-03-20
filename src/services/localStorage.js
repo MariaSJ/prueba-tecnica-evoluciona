@@ -1,4 +1,4 @@
-// Fichero src/services/localStorage.js
+// Functions localStorage
 
 const get = (key, defaultValue) => {
   const localStorageData = localStorage.getItem(key);
